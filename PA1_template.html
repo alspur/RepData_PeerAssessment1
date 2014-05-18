@@ -263,19 +263,12 @@ plot(activity.interval$interval, activity.interval$steps, type = &quot;l&quot;, 
 
 <h2>Imputing missing values</h2>
 
-<p>If we calculate total number of rows with <code>NA</code> values in the <code>steps</code> column, we can see that there are **</p>
-
-<pre><code>
-Error in eval(expr, envir, enclos) : object &#39;na.total&#39; not found
-
-</code></pre>
-
-<p>** rows with missing data.</p>
-
 <pre><code class="r">na.idx &lt;- is.na(activity.data$steps)
 
 na.total &lt;- sum(na.idx)
 </code></pre>
+
+<p>If we calculate total number of rows with <code>NA</code> values in the <code>steps</code> column, we can see that there are <strong>2304</strong> rows with missing data.</p>
 
 <p>In order to impute the missing data, we will duplicate the dataset, then replace each <code>NA</code> value with the mean number of steps for that interval, using values the <code>activity.imputed</code> dataset.</p>
 

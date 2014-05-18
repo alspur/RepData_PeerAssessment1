@@ -102,15 +102,6 @@ activity.interval$interval[activity.interval$steps == max(activity.interval$step
 
 ## Imputing missing values
 
-If we calculate total number of rows with `NA` values in the `steps` column, we can see that there are **
-
-```
-
-Error in eval(expr, envir, enclos) : object 'na.total' not found
-
-```
-
-** rows with missing data.
 
 ```r
 na.idx <- is.na(activity.data$steps)
@@ -118,6 +109,8 @@ na.idx <- is.na(activity.data$steps)
 na.total <- sum(na.idx)
 ```
 
+
+If we calculate total number of rows with `NA` values in the `steps` column, we can see that there are **2304** rows with missing data.
 
 In order to impute the missing data, we will duplicate the dataset, then replace each `NA` value with the mean number of steps for that interval, using values the `activity.imputed` dataset.
 
